@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordPress Fleet Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>WordPress Fleet Dashboard</h1>
+        <p>Centralized operations for all managed client websites</p>
+      </div>
+      <div class="actions">
+        <button id="refreshBtn">Refresh</button>
+        <button id="exportCsvBtn">Export CSV</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="table-wrap">
+        <table id="sitesTable">
+          <thead>
+            <tr>
+              <th>Site Name</th>
+              <th>WordPress</th>
+              <th>SSL</th>
+              <th>Users</th>
+              <th>PHP</th>
+              <th>Status</th>
+              <th>HTTP</th>
+              <th>Uptime</th>
+              <th>Last Backup</th>
+              <th>Plugin Updates</th>
+              <th>Core Updates</th>
+              <th>Theme Updates</th>
+              <th>Disk Usage</th>
+              <th>Response Time</th>
+              <th>Last Checked</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <template id="siteRowTemplate">
+      <tr>
+        <td>
+          <div class="site-cell">
+            <img class="site-thumb" alt="Website thumbnail" />
+            <a class="site-link" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+        </td>
+        <td data-field="wpVersion"></td>
+        <td data-field="sslStatus"></td>
+        <td data-field="users"></td>
+        <td data-field="phpVersion"></td>
+        <td data-field="status"></td>
+        <td data-field="httpCode"></td>
+        <td data-field="uptime"></td>
+        <td data-field="lastBackup"></td>
+        <td data-field="pluginUpdates"></td>
+        <td data-field="coreUpdates"></td>
+        <td data-field="themeUpdates"></td>
+        <td data-field="diskUsage"></td>
+        <td data-field="responseTimeMs"></td>
+        <td data-field="lastChecked"></td>
+        <td>
+          <a class="admin-link" title="Login as admin" target="_blank" rel="noopener noreferrer">🔐</a>
+        </td>
+      </tr>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
